@@ -1,4 +1,7 @@
 /*布局样式*/
+body{
+    background: #f7f7f7;
+}
 .bg{
     height: 100%;
     width: 100%;
@@ -63,6 +66,7 @@
     position: fixed;
     top:0;
     right: 0;
+    text-align: center;
 }
 /*模块样式-header*/
 .logo{
@@ -74,9 +78,6 @@
     background: url("../images/icon/logo.png") left top no-repeat;
     background-position:0 0.375rem;
     margin-right: 0.45rem;
-}
-.menu{
-    margin-right: 4rem;
 }
 .menu li{
     float:left;
@@ -93,7 +94,7 @@
     height:.75rem;
     width: 100%;
     display: block;
-    padding:0.375rem 0.875rem;
+    padding:0.375rem 0.675rem;
 }
 .rule,.icon_M,.user{
     position: relative;
@@ -109,8 +110,27 @@
     margin-right: 1rem;
 }
 .icon_M{
-
     margin-right: 2.675rem;
+}
+.bottom_tringle{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0.2rem 0.25rem 0.2rem;
+    border-color: transparent transparent #fff transparent;
+}
+.bottom_tringle:after{
+    content: "dddddd";
+    width: 4rem;
+    height: 5rem;
+    background: white;
+    position: absolute;
+    bottom: -5.2rem;
+    right: -2rem;
+    z-index: 3;
 }
 /*search样式*/
 .address{
@@ -141,21 +161,26 @@
     background: #fff;
     width:7.075rem;
     height:.55rem;
+    line-height: .55rem;
     border:1px solid #ccc;
     padding-top:.2rem;
+    padding-bottom:.2rem ;
     padding-left:.25rem;
 }
 .searchName input{
     border:none;
     width:6rem;
+    height: .55rem;
+    line-height: .55rem;
+    font-size:.35rem;
 }
 .find{
     position: absolute;
     display: inline-block;
     width: .35rem;
-    height: .35rem;
+    height: .75rem;
     right: .35rem;
-    top: .1rem;
+    top: .25rem;
 }
 /*nav样式*/
 #nav span{
@@ -224,7 +249,7 @@
 }
 .help,.cooperation,.about{
     display:inline-block;
-    margin-right:2.45rem;
+    margin-right:1.2rem;
 }
 .help p,.cooperation p,.about p{
     margin-bottom:0.3rem;
@@ -264,4 +289,27 @@
     font-size: 0.4rem;
     color: #666666;
 }
+.shop_menu{
+    margin-top: 4.75rem;
+    margin-bottom: 4rem;
+}
+#slider a{
+    margin-top: .55rem;
+    display: block;
+    width: .875rem;
+}
+#slider a:hover{
+    background:#1e89e0;
+}
+#slider p{
+    margin: 0 auto;
+    color: #ffffff;
+    width: .55rem;
+    font-size: .25rem;
+}
+.icon-note,.icon-14shopcar1,.icon-mail,.icon-qrcode,.icon-top{
+    color: #ffffff;
+    font-size: .5rem;
+}
+
  
