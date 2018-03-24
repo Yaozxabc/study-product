@@ -28,8 +28,8 @@
             }).on("blur",function(){
                 $(this).parent().animate({width:"7.075rem"},300);
             })
-            $ch_1=document.documentElement.clientWidth;
-            $(".bg").width($ch_1);
+
+            $(".bg").width("100%");
 //            function ToResize(){
 //
 //                if($ch>$cha && $ch <$cha*2){
@@ -40,11 +40,9 @@
 //                }
 //            }
             $(window).on("resize",function(){
-                $ch=document.documentElement.clientWidth;
-                $(".bg").width($ch_1);
+                document.title=document.getElementsByTagName("html")[0].offsetWidth
                 var count=$ch_1/$ch;
                 $("html").css({
-                    "background": "red",
                     "fontSize":40/count+"px"
                 })
             })
@@ -64,13 +62,17 @@
                 <li><a href="#">加盟合作</a></li>
                 <li><a href="#">我的客服</a></li>
             </ul>
+            <div class="fr">
             <a href="#" class="rule">规则中心</a>
-            <a href="#" class="icon_M">
+            <a href="#" class="icon_M ">
                 <i class="iconfont icon-mobile"></i><p>手机应用</p>
+                <i class="bottom_tringle"></i>
             </a>
+
             <a href="#" class="user">
                 <i class="iconfont icon-user"></i><p>登录注册</p>
             </a>
+            </div>
         </div>
         <div id="search" class="clearfix">
             <div class="address">
@@ -519,11 +521,24 @@
         </div>
     </div>
     <div id="slider">
-        <i class="icont-font"></i>
-        <i class="icont-font"></i>
+        <div class="shop_menu">
+        <a href="#">
+        <i class="iconfont icon-note"></i>
+        </a>
+        <a href="#">
+        <i class="iconfont icon-14shopcar1"></i>
         <p>购物车</p>
-        <i class="icont-font"></i>
-        <i class="icont-font"></i>
+            </a>
+        <a href="#">
+        <i class="iconfont icon-mail"></i>
+        </a>
+        </div>
+        <a href="#">
+        <i class="iconfont icon-qrcode"></i>
+        </a>
+        <a href="#">
+            <i class="iconfont icon-top"></i>
+        </a>
     </div>
 </div>
 
