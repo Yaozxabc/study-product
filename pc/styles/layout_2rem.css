@@ -109,28 +109,41 @@ body{
 .rule{
     margin-right: 1rem;
 }
+.Mobile{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+.Mobile img{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+.Mobile:hover .bottom_tringle{
+    display: block;
+}
 .icon_M{
     margin-right: 2.675rem;
 }
 .bottom_tringle{
+    display: none;
     position: absolute;
-    top: 80%;
-    left: 50%;
+    width: 4rem;
+    height: 5rem;
+    background: white;
+    top: 100%;
+    left: -2rem;
+    z-index: 3;
+}
+.bottom_tringle:after{
+    content: "";
+    position: absolute;
+    top: -.2rem;
+    left: 1.85rem;
     width: 0;
     height: 0;
     border-style: solid;
     border-width: 0 0.2rem 0.25rem 0.2rem;
     border-color: transparent transparent #fff transparent;
-}
-.bottom_tringle:after{
-    content: "dddddd";
-    width: 4rem;
-    height: 5rem;
-    background: white;
-    position: absolute;
-    bottom: -5.2rem;
-    right: -2rem;
-    z-index: 3;
 }
 /*searchÑùÊ½*/
 .address{
