@@ -109,18 +109,27 @@ body{
 .rule{
     margin-right: 1rem;
 }
-.Mobile{
+.Mobile,.QR_code{
     display: inline-block;
     position: relative;
     text-align: center;
 }
-.Mobile img{
+.Mobile img,.QR_code{
     width: 3.5rem;
     height: 3.5rem;
 }
-.Mobile:hover .bottom_tringle{
+.Mobile:hover div,.QR_code:hover div{
     display: block;
 }
+.Mobile:hover div{
+    top: 100%;
+    left: -2rem;
+}
+.QR_code:hover div{
+    top: 0;
+    left: -4rem;
+}
+
 .icon_M{
     margin-right: 2.675rem;
 }
@@ -130,8 +139,6 @@ body{
     width: 4rem;
     height: 5rem;
     background: white;
-    top: 100%;
-    left: -2rem;
     z-index: 3;
 }
 .bottom_tringle:after{

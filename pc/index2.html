@@ -30,6 +30,18 @@
             })
 
             $(".bg").width("100%");
+            $.get("scripts/shop.json",function(data,textStatus){
+                var $i=0;
+                $(".shop_logo > img").each(function(){
+                    $(this).attr("src",data.list[0].logo[$i])
+                    $i++;
+                })
+                var $i=0;
+                $(".shop_name").each(function(){
+                    $(this).text(data.list[0].name[$i])
+                    $i++;
+                })
+              },"json");
 //            function ToResize(){
 //
 //                if($ch>$cha && $ch <$cha*2){
@@ -38,13 +50,9 @@
 //                        "fontSize":$cha*4/$ch+"px"
 //                    })
 //                }
-//            }
+//            }src="images/shop/bishengke/logo.jpg"
             $(window).on("resize",function(){
-                document.title=document.getElementsByTagName("html")[0].offsetWidth
-                var count=$ch_1/$ch;
-                $("html").css({
-                    "fontSize":40/count+"px"
-                })
+
             })
 
         })
@@ -115,7 +123,7 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="images/shop/logo/logo%20(1).png" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
@@ -128,7 +136,7 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="images/shop/logo/logo%20(11).png" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
@@ -514,7 +522,7 @@
                     <p>关注我们</p>
                 </div>
                 <div class="app_down fr">
-                    <img src="images/shop/bishengke/QR_code.jpg" alt=""/>
+                    <img src="images/QR_code.jpg" alt="饿了么app"/>
                     <div class="down_link fr">
                         <h4>下载手机版</h4>
                         <p>手机订餐更方便</p>
@@ -536,9 +544,15 @@
         <i class="iconfont icon-mail"></i>
         </a>
         </div>
-        <a href="#">
+        <div class="QR_code">
+        <a href="#" >
         <i class="iconfont icon-qrcode"></i>
         </a>
+            <div class="bottom_tringle">
+                <h3>下载应用更方便</h3>
+                <img src="images/QR_code.jpg" alt="饿了吗"/>
+            </div>
+        </div>
         <a href="#">
             <i class="iconfont icon-top"></i>
         </a>
