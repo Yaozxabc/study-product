@@ -9,13 +9,6 @@
     <link rel="stylesheet" href="styles/layout_2rem.css"/>
     <link rel="icon" href="images/icon/el"/>
     <style>
-.icon-mobile,.icon-user{
-    position: absolute;
-    left: -.7rem;
-    top: .3rem;
-    display: inline-block;
-    font-size: .62rem;
-}
     </style>
     <script src="scripts/jquery-3.3.1.min.js"></script>
     <script>
@@ -23,37 +16,41 @@
             "fontSize":"40px"
         })
         $(function(){
+            var timer;
+//            $(".bg").width("100%");
             $(".searchName > input" ).on("focus",function(){
                 $(this).parent().animate({width:"8.5rem"},300);
             }).on("blur",function(){
                 $(this).parent().animate({width:"7.075rem"},300);
             })
-
-            $(".bg").width("100%");
-            $.get("scripts/shop.json",function(data,textStatus){
-                var $i=0;
-                $(".shop_logo > img").each(function(){
-                    $(this).attr("src","images/shop/logo/logo%20("+data.list[0].logo[$i]+").png")
-                    $i++;
-                })
-                var $i=0;
-                $(".shop_name").each(function(){
-                    $(this).html(data.list[0].name[$i])
-                    $i++;
-                })
-              },"json");
-//            function ToResize(){
-//
-//                if($ch>$cha && $ch <$cha*2){
-//                    $("html").css({
-//                        "background": "red",
-//                        "fontSize":$cha*4/$ch+"px"
-//                    })
-//                }
-//            }src="images/shop/bishengke/logo.jpg"
-            $(window).on("resize",function(){
+            $(".shop_list >li>a").bind("mouseover",function(){
+                clearTimeout(timer);
+                $(".shop_show").remove();
+                var $that=$(this);
+                var $sInfo=$("<div><span></span>aa</div>");
+                if(($(this).parent().index()+1)%4){
+                   $sInfo.addClass("shop_show")
+                }else {
+                    $sInfo.addClass("shop_show_last")
+                }
+                timer=setTimeout(function(){
+                    $that.append($sInfo);
+                },300)
+            })
+            $(".shop_list >li").bind("mouseout",function(){
+                clearTimeout(timer);
+                $(".shop_show").remove();
+                $(".shop_show_last").remove();
 
             })
+            $.get("scripts/shop.json",function(data,textStatus){
+                var nImg=data.list[0].logo.length;
+                for(i=0;i<nImg;i++){
+                    $(".shop_logo > img")[i].setAttribute("src","images/shop/logo/logo%20("+(i+1)+").png");
+                    $(".shop_name")[i].innerHTML=data.list[0].name[i]
+                }
+              },"json");
+
 
         })
     </script>
@@ -97,7 +94,6 @@
             </div>
         </div>
         <div id="nav" class="clearfix">
-            <div class="nav_warp">
             <span class="fl">商家分类：</span>
             <ul class="fl">
                 <li class="active"><a href="#">全部商家</a></li>
@@ -116,7 +112,7 @@
                 <li><a href="#">晚餐</a></li>
                 <li><a href="#">夜宵</a></li>
             </ul>
-            </div>
+
         </div>
         <div id="content" class="clearfix">
             <ul class="shop_list">
@@ -533,7 +529,7 @@
     </div>
     <div id="slider">
         <div class="shop_menu">
-        <a href="#">
+        <a href="#" title="我的订单">
         <i class="iconfont icon-note"></i>
         </a>
         <a href="#" class="shop_car">
@@ -541,6 +537,7 @@
         <p>购物车</p>
             </a>
         <a href="#">
+
         <i class="iconfont icon-mail"></i>
         </a>
         </div>
