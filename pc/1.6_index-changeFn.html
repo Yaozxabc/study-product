@@ -17,12 +17,14 @@
         })
         $(function(){
             var timer;
-//            $(".bg").width("100%");
+
             $(".searchName > input" ).on("focus",function(){
                 $(this).parent().animate({width:"8.5rem"},300);
             }).on("blur",function(){
                 $(this).parent().animate({width:"7.075rem"},300);
             })
+
+
             $(".shop_list >li>a").bind("mouseover",function(){
                 clearTimeout(timer);
                 $(".shop_show").remove();
@@ -37,18 +39,50 @@
                     $that.append($sInfo);
                 },300)
             })
+
+
             $(".shop_list >li").bind("mouseout",function(){
                 clearTimeout(timer);
                 $(".shop_show").remove();
                 $(".shop_show_last").remove();
 
             })
+
+
             $.get("scripts/shop1.json",function(data,textStatus){
-                var nImg=data.list[0].shop.length;;
-                for(i=0;i<nImg;i++){
-                    $(".shop_logo > img")[i].setAttribute("src","images/shop/logo/logo%20("+(i+1)+").png");
-                    $(".shop_name")[i].innerHTML=data.list[0].shop[i][1]
+                function ToGetData(id,attr){
+                    var aShop=data.list[0].shop;
+                    for(i=0;i<aShop.length;i++){
+                        if(aShop[i][2]=="0"+id){
+                            switch (attr){
+                                case "type":
+                                    return data.list[0].shop[i][0]
+                                    break;
+                                case "name":
+                                    return data.list[0].shop[i][1]
+                                    break;
+                                case "ID":
+                                    return data.list[0].shop[i][2]
+                                break;
+                                case "star":
+                                    return data.list[0].shop[i][4]
+                                break;
+                                case "time":
+                                    return data.list[0].shop[i][5]
+                                    break;
+                                case "money":
+                                    return data.list[0].shop[i][6]
+                                    break;
+                                default :{
+                                    return false;
+                                }
+                            }
+                        }
+//                        $(obj)[i].setAttribute(attr,"images/shop/logo/logo%20("+(i+1)+").png");
+                    }
                 }
+
+
               },"json");
 
 
@@ -115,7 +149,7 @@
 
         </div>
         <div id="content" class="clearfix">
-            <div class="shop_show" style="display: none">
+            <div class="shop_show" style="display: none;">
                 <h3>
                     <strong>欧丽莱蛋糕店 欧丽蛋糕</strong>
                     <p><span>蛋糕</span><span>甜品</span></p>
@@ -140,7 +174,7 @@
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <img src="images/shop/bishengke/star.png" alt="好评" class="star"/>
+                        <img src="images/shop/star" alt="好评" class="star"/>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -153,7 +187,6 @@
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <img src="images/shop/bishengke/star.png" alt="好评" class="star"/>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -166,8 +199,7 @@
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <img src="images/shop/bishengke/star.png" alt="好评" class="star"/>
-                        <p class="play_for">配送费</p>
+             <p class="play_for">配送费</p>
                     </div>
                     </a>
                 </li>
@@ -573,6 +605,7 @@
 </div>
 
 
+<iframe src="images/shop/star/star.svg" width="200px" height="104px" frameborder="0"></iframe>
 
 </body>
 </html>
