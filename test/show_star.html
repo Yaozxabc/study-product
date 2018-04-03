@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #abc,#bcd{
+            background: darkblue;
+            position: relative;
+            height: 10px;
+            width: 70px;
+            overflow: hidden;
+        }
+		#abc svg,#bcd svg{
+
+        }
+    </style>
+	<script>
+		window.onload=function(){
+			function ToGetStar(ID,count){
+				var aaa=document.getElementById(ID);
+				var svg=aaa.getElementsByTagName("svg")[0];
+				if(count){
+					svg.style.top=(5-count)*(-20)+"px";
+				}
+			}
+			ToGetStar("abc",4);
+////			ToGetStar("efg",5);
+			ToGetStar("bcd",3);
+
+		}
+	</script>
+</head>
+<body>
+<div id="aad">
+	<img src="../pc/images/shop/star/5star.svg" alt="" style="width: 70px;height: 70px"/>
+</div>
+
+
+</body>
+</html>
