@@ -24,9 +24,7 @@
                     $(this).parent().animate({width:"7.075rem"},300);
                 })
             })();
-            (function(){
 
-            })();
             /*鼠标移动显示效果*/
             (function(){
                 var timer;
@@ -51,6 +49,7 @@
 
                 })
             })();
+
             /*加载显示商店信息*/
             (function(){
                 $.get("scripts/shop2.json",function(data,textStatus){
@@ -63,9 +62,9 @@
                         $(".shop_name").eq(i).html(data.list[0].shop[i]["name"])
                         $(".play_for").eq(i).html("配送费 "+data.list[0].shop[i]["free"]+"元")
                         $(".star > img").eq(i).css("top",(5-data.list[0].shop[i]["star"])*(-0.5)+"rem")
+                        $(".shop_logo .time").eq(i).html(data.list[0].shop[i]["time"]+"分钟")
                     }
                 },"json");
-
             })();
         })
     </script>
@@ -587,9 +586,5 @@
         </a>
     </div>
 </div>
-
-
-<iframe src="images/shop/star/star.svg" width="200px" height="104px" frameborder="0"></iframe>
-
 </body>
 </html>
