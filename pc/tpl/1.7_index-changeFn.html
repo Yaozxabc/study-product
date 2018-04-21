@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <!--<meta name="viewport" id="viewport" content="width=640,initial-scale=1,user-scalable=0">-->
     <title>饿了么</title>
-    <link rel="stylesheet" href="styles/reset2.css"/>
-    <link rel="stylesheet" type="text/css" href="images/iconfont/index/iconfont.css">
-    <link rel="stylesheet" href="styles/layout_3rem.css"/>
-    <link rel="icon" href="images/icon/el"/>
+    <link rel="stylesheet" href="../styles/reset2.css"/>
+    <link rel="stylesheet" type="text/css" href="../images/iconfont/index/iconfont.css">
+    <link rel="stylesheet" href="../styles/layout_3rem.css"/>
+    <link rel="icon" href="../images/icon/el"/>
     <style>
     </style>
-    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <script src="../scripts/jquery-3.3.1.min.js"></script>
     <script>
         $("html").css({
             "fontSize":"40px"
@@ -52,13 +52,13 @@
 
             /*加载显示商店信息*/
             (function(){
-                $.get("scripts/shop2.json",function(data,textStatus){
+                $.get("../scripts/shop2.json",function(data,textStatus){
                     var len=$(".shop_list >li").length;
                     for(i=0;i<len;i++){
                         var str=data.list[0].shop[i]["id"];
                         var Regex=/^0+/;
                         var oId=str.replace(Regex,"");
-                        $(".shop_logo img").eq(i).attr("src","images/shop/logo/logo%20("+oId+").png")
+                        $(".shop_logo img").eq(i).attr("src","../images/shop/logo/logo%20("+oId+").png")
                         $(".shop_name").eq(i).html(data.list[0].shop[i]["name"])
                         $(".play_for").eq(i).html("配送费 "+data.list[0].shop[i]["free"]+"元")
                         $(".star > img").eq(i).css("top",(5-data.list[0].shop[i]["star"])*(-0.5)+"rem")
@@ -66,6 +66,22 @@
                     }
                 },"json");
             })();
+            /*侧边栏—返回顶部效果*/
+            (function(){
+                $(window).bind("scroll",function(){
+                    if($(window).scrollTop()>=$(window).height()/2){
+                        $(".icon-top").css("display","block")
+                    }else{
+                        $(".icon-top").css("display","none")
+                    }
+
+                })
+                $(".icon-top").click(function(){
+                    $(document.body).animate({scrollTop:0},300);
+                })
+
+            })()
+
         })
     </script>
 </head>
@@ -87,7 +103,7 @@
                     <a href="#" class="icon_M "><i class="iconfont icon-mobile"></i><p>手机应用</p></a>
                     <div class="bottom_tringle">
                         <h3>下载应用更方便</h3>
-                        <img src="images/QR_code.jpg" alt="饿了吗"/>
+                        <img src="../images/QR_code.jpg" alt="饿了吗"/>
                     </div>
                 </div>
 
@@ -149,12 +165,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/logo/logo%20(1).png" alt="必胜客" />
+                        <img src="../images/shop/logo/logo%20(1).png" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star"><img src="images/shop/star/5star.svg" alt="好评" class="star"/>
+                        <div class="star"><img src="../images/shop/star/5star.svg" alt="好评" class="star"/>
                         </div>
                         <p class="play_for">配送费</p>
                     </div>
@@ -163,12 +179,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/logo/logo%20(11).png" alt="必胜客" />
+                        <img src="../images/shop/logo/logo%20(11).png" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star"><img src="images/shop/star/5star.svg" alt="好评" class="star"/></div>
+                        <div class="star"><img src="../images/shop/star/5star.svg" alt="好评" class="star"/></div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -176,12 +192,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star"><img src="images/shop/star/5star.svg" alt="好评" class="star"/></div>
+                        <div class="star"><img src="../images/shop/star/5star.svg" alt="好评" class="star"/></div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -189,12 +205,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -202,12 +218,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -215,12 +231,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -228,12 +244,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -241,12 +257,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -254,12 +270,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -267,12 +283,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -280,12 +296,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -293,12 +309,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -306,12 +322,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -319,12 +335,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -332,12 +348,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -345,12 +361,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -358,12 +374,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -371,12 +387,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -384,12 +400,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -397,12 +413,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -410,12 +426,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -423,12 +439,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -436,12 +452,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -449,12 +465,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -462,12 +478,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -475,12 +491,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -488,12 +504,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -501,12 +517,12 @@
                 <li>
                     <a href="#">
                     <div class="shop_logo fl">
-                        <img src="images/shop/bishengke/logo.jpg" alt="必胜客" />
+                        <img src="../images/shop/bishengke/logo.jpg" alt="必胜客" />
                         <p class="time">29分钟</p>
                     </div>
                     <div class="shop_info">
                         <h3 class="shop_name">必胜客</h3>
-                        <div class="star">                             <img src="images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
+                        <div class="star">                             <img src="../images/shop/star/5star.svg" alt="好评" class="star"/>                         </div>
                         <p class="play_for">配送费</p>
                     </div>
                     </a>
@@ -549,7 +565,7 @@
                     <p>关注我们</p>
                 </div>
                 <div class="app_down fr">
-                    <img src="images/QR_code.jpg" alt="饿了么app"/>
+                    <img src="../images/QR_code.jpg" alt="饿了么app"/>
                     <div class="down_link fr">
                         <h4>下载手机版</h4>
                         <p>手机订餐更方便</p>
@@ -578,7 +594,7 @@
         </a>
             <div class="bottom_tringle">
                 <h3>下载应用更方便</h3>
-                <img src="images/QR_code.jpg" alt="饿了吗"/>
+                <img src="../images/QR_code.jpg" alt="饿了吗"/>
             </div>
         </div>
         <a href="#">

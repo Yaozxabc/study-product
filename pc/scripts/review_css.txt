@@ -1,0 +1,16 @@
+.user_head
+.user_head img
+.user_review
+.user_review .username
+.user_review .user_appraise
+.user_review .user_appraise .level
+.user_review .user_appraise .level i
+.user_review .user_appraise .comment
+.user_review .user_appraise .arrive_time
+.user_review .appraise_text
+.user_review .Satisfaction_level
+.user_review .Seller_reply
+.user_review .Seller_reply em
+.user_review .Seller_reply p
+.user_review .appraise_show
+.user_review .appraise_show img

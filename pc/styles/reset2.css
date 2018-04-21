@@ -32,7 +32,7 @@ textarea{
 /*多行文本框变大变小；取消右侧滚动条*/
 body{
     font-size: 12px;
-    font-family: "微软雅黑"
+    font-family: 微软雅黑;
 }
 /*公用样式*/
 .fl{

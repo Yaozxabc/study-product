@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>饿了么</title>
+    <link rel="stylesheet" href="../../styles/reset2.css"/>
+    <link rel="stylesheet" type="text/css" href="../../images/iconfont/index/iconfont.css">
+    <link rel="stylesheet" href="../../styles/layout_page.css"/>
+    <link rel="icon" href="../../images/icon/el"/>
+    <style>
+    </style>
+    <script src="../../scripts/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            /*tab切换*/
+            $('.shop_option1>li>a').bind('click',function(){
+                $(this).parent().siblings().removeClass("active");
+                $(this).parent().addClass('active');
+                $('.main>div').css("display","none");
+                $('.main>div').eq($(this).parent().index()).css("display","block");
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="bg">
+    <div class="bg_top"></div>
+    <div class="warp clearfix">
+        <div id="header" class="clearfix">
+            <h1><a href="#" class="logo fl">饿了么</a></h1>
+            <ul class="menu fl">
+                <li class="active"><a href="../../index/1.7_index-changeFn.html">首页</a></li>
+                <li><a href="#">我的订单</a></li>
+                <li><a href="#">加盟合作</a></li>
+                <li><a href="#">我的客服</a></li>
+            </ul>
+            <div class="fr">
+                <a href="#" class="rule">规则中心</a>
+                <div class="Mobile">
+                    <a href="#" class="icon_M "><i class="iconfont icon-mobile"></i><p>手机应用</p></a>
+                    <div class="bottom_tringle">
+                        <h3>下载应用更方便</h3>
+                        <img src="../../images/QR_code.jpg" alt="饿了吗"/>
+                    </div>
+                </div>
+                <a href="#" class="user">
+                    <i class="iconfont icon-user"></i><p>登录注册</p>
+                </a>
+            </div>
+        </div>
+        <div class="shop_header">
+            <div class="shop_header_fl fl">
+                <img class="header_logo" src="../../images/shop/logo/logo%20(5).png" alt=""/>
+                <div class="shop_name fr">
+                    <h3>加州汉堡（长兴店）</h3>
+                    <div class="header_star">
+                        <img src="../../images/shop/star/5star.svg" alt="好评" class="star"/>
+                        <span>(459)</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="shop_header_fr fr">
+                <div class="shop_spend">
+                    <h4>起送费</h4>
+                    <strong>20元</strong>
+                </div>
+                <div class="shop_spend">
+                    <h4>配送价</h4>
+                    <strong>配送费￥22</strong>
+                </div>
+                <div class="shop_spend">
+                    <h4>平均送达时间</h4>
+                    <strong>25分钟</strong>
+                </div>
+                <a class="collection" href="#">
+                    <i class="iconfont icon-collection"></i>
+                    <p>收藏</p>
+                </a>
+            </div>
+        </div>
+        <div id="search" class="clearfix">
+            <ul class="shop_option1 fl">
+                <li class="active"><a href="#">所有商品</a></li>
+                <li><a href="#">评价</a></li>
+                <li><a href="#">商家资质</a></li>
+            </ul>
+            <ul class="shop_option2">
+            <li><a href="#">默认评价</a></li>
+            <li><a href="#">评分 <i class="iconfont icon-bottom"></i></a></li>
+            <li><a href="#">销量 <i class="iconfont icon-bottom"></i></a></li>
+            <li><a href="#">价格 <i class="iconfont icon-bottom"></i></a></li>
+            <li><a href="#"></a><a href="#"></a></li>
+        </ul>
+            <div class="searchName fr">
+                <input type="text" placeholder="搜索商家名字"/>
+                <a href="#" class="iconfont icon-search find"></a>
+            </div>
+        </div>
+        <div id="content" class="clearfix">
+            <div class="main fl">
+                <div class="all_products clearfix">
+                    <ul class="food_category">
+                        <li><a href="#" class="active"> 热销</a></li>
+                        <li><a href="#"> 优惠</a></li>
+                        <li><a href="#" > 11元爆款</a></li>
+                        <li><a href="#"> 超值爆款</a></li>
+                        <li><a href="#"> 劲爆五折会场</a></li>
+                        <li><a href="#"> 超值单人套餐</a></li>
+                        <li><a href="#"> 缤纷双人或三人套餐</a></li>
+                        <li><a href="#"> 加州最佳休闲小吃</a></li>
+                        <li><a href="#"> 加州主打美食</a></li>
+                        <li><a href="#"> 冰爽百事</a></li>
+                        <li><a href="#"> 加州奶茶冷饮世界</a></li>
+                        <li><a href="#"> 温馨热饮</a></li>
+                        <li><a href="#"> 配料</a></li>
+                        <li><a href="#"> 套餐饮料任性换</a></li>
+                        <li><a href="#"> 饿了么专享超值爆款</a></li>
+                        <li><a href="#">  秒杀加州五折</a></li>
+                    </ul>
+                    <div class="food_list">
+                        <div class="food_session clearfix">
+                        <h3>
+                            <strong>热销</strong><em>大家喜欢吃，才叫真好吃</em>
+                        </h3>
+                        <ul class="food_menu">
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt=""/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt=""/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt=""/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="food_session clearfix">
+                        <h3>
+                            <strong>热销</strong><em>大家喜欢吃，才叫真好吃</em>
+                        </h3>
+                        <ul class="food_menu">
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt=""/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt=""/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt=""/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="food_session clearfix">
+                        <h3>
+                            <strong>热销</strong><em>大家喜欢吃，才叫真好吃</em>
+                        </h3>
+                        <ul class="food_menu">
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt=""/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt=""/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt=""/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="review">
+                    <ul class="review_nav">
+                        <li><a href="#">全部</a></li>
+                        <li><a href="#" >满意</a></li>
+                        <li><a href="#" class="active">不满意</a></li>
+                        <li><a href="#">有图</a></li>
+                    </ul>
+                    <ul class="review_list">
+                        <li class="clearfix">
+                            <div class="user_head fl">
+                                <img src="../images/shop/logo/logo%20(11).png" alt=""/>
+                            </div>
+                            <div class="user_review fr">
+                                <p class="user_name"><span class="fl">匿名用户</span><span class="fr">2018-01-01 12:00:00</span></p>
+                                <p class="user_appraise">
+                                  <span class="level">
+                                      <i class="iconfont icon-star"></i>
+                                      <i class="iconfont icon-star"></i>
+                                      <i class="iconfont icon-star glay"></i>
+                                      <i class="iconfont icon-star glay"></i>
+                                      <i class="iconfont icon-star glay"></i>
+                                  </span>
+                                    <span class="comment">极差</span>
+                                    <span class="arrive_time">50分钟</span>
+                                </p>
+                                <p class="appraise_text">不知道怎么形容了，我还是第一次点</p>
+                                <p class="Satisfaction_level">
+                                    <span>快乐的小太阳</span>
+                                   <span>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile glay"></i>
+                                   </span>
+                                    <span>失望</span>
+                                    <a href="#">查看商品</a>
+                                </p>
+                                <div class="Seller_reply">
+                                    <h5>商家回复</h5>
+                                    <p>亲，你好！我们为商品没能给你带来好的体验而抱歉</p>
+                                </div>
+                                <div class="appraise_show">
+                                    <img src="" alt=""/>
+                                </div>
+                            </div>
+
+
+                        </li>
+                        <li class="clearfix">
+                            <div class="user_head fl">
+                                <img src="../images/shop/logo/logo%20(11).png" alt=""/>
+                            </div>
+                            <div class="user_review fr">
+                                <p class="user_name"><span class="fl">匿名用户</span><span class="fr">2018-01-01 12:00:00</span></p>
+                                <p class="user_appraise">
+                                  <span class="level">
+                                      <i class="iconfont icon-star"></i>
+                                      <i class="iconfont icon-star"></i>
+                                      <i class="iconfont icon-star"></i>
+                                      <i class="iconfont icon-star"></i>
+                                      <i class="iconfont icon-star glay"></i>
+                                  </span>
+                                    <span class="comment">极差</span>
+                                    <span class="arrive_time">50分钟</span>
+                                </p>
+                                <p class="appraise_text">不知道怎么形容了，我还是第一次点</p>
+                                <p class="Satisfaction_level">
+                                    <span>快乐的小太阳</span>
+                                   <span>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile glay"></i>
+                                   </span>
+                                    <span>失望</span>
+                                    <a href="#">查看商品</a>
+                                </p>
+                                <div class="Seller_reply">
+                                    <h5>商家回复</h5>
+                                    <p>亲，你好！我们为商品没能给你带来好的体验而抱歉</p>
+                                </div>
+                                <div class="appraise_show">
+                                    <img src="" alt=""/>
+                                </div>
+                            </div>
+
+
+                        </li>
+                        <li class="clearfix">
+                            <div class="user_head fl">
+                                <img src="../images/shop/logo/logo%20(11).png" alt=""/>
+                            </div>
+                            <div class="user_review fr">
+                                <p class="user_name"><span class="fl">匿名用户</span><span class="fr">2018-01-01 12:00:00</span></p>
+                                <p class="user_appraise">
+                                  <span class="level">
+                                      <i class="iconfont icon-star"></i>
+                                      <i class="iconfont icon-star"></i>
+                                      <i class="iconfont icon-star"></i>
+                                      <i class="iconfont icon-star glay"></i>
+                                      <i class="iconfont icon-star glay"></i>
+                                  </span>
+                                    <span class="comment">极差</span>
+                                    <span class="arrive_time">50分钟</span>
+                                </p>
+                                <p class="appraise_text">不知道怎么形容了，我还是第一次点</p>
+                                <p class="Satisfaction_level">
+                                    <span>快乐的小太阳</span>
+                                   <span>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile glay"></i>
+                                       <i class="iconfont icon-smile glay"></i>
+                                   </span>
+                                    <span>失望</span>
+                                    <a href="#">查看商品</a>
+                                </p>
+                                <div class="Seller_reply">
+                                    <h5>商家回复</h5>
+                                    <p>亲，你好！我们为商品没能给你带来好的体验而抱歉</p>
+                                </div>
+                                <div class="appraise_show">
+                                    <img src="" alt=""/>
+                                </div>
+                            </div>
+
+
+                        </li>
+                        <li class="clearfix">
+                            <div class="user_head fl">
+                                <img src="../images/shop/logo/logo%20(11).png" alt=""/>
+                            </div>
+                            <div class="user_review fr">
+                                <p class="user_name"><span class="fl">匿名用户</span><span class="fr">2018-01-01 12:00:00</span></p>
+                                <p class="user_appraise">
+                                  <span class="level">
+                                      <i class="iconfont icon-star"></i>
+                                      <i class="iconfont icon-star"></i>
+                                      <i class="iconfont icon-star"></i>
+                                      <i class="iconfont icon-star glay"></i>
+                                      <i class="iconfont icon-star glay"></i>
+                                  </span>
+                                    <span class="comment">极差</span>
+                                    <span class="arrive_time">50分钟</span>
+                                </p>
+                                <p class="appraise_text">不知道怎么形容了，我还是第一次点</p>
+                                <p class="Satisfaction_level">
+                                    <span>快乐的小太阳</span>
+                                   <span>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile"></i>
+                                       <i class="iconfont icon-smile"></i>
+                                   </span>
+                                    <span>失望</span>
+                                    <a href="#">查看商品</a>
+                                </p>
+                                <div class="Seller_reply">
+                                    <h5>商家回复</h5>
+                                    <p>亲，你好！我们为商品没能给你带来好的体验而抱歉</p>
+                                </div>
+                                <div class="appraise_show">
+                                    <img src="" alt=""/>
+                                </div>
+                            </div>
+
+
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="qualification">
+                    <h3>营业资质</h3>
+                    <ul>
+                        <li><p>食品安全监督公示</p></li>
+                        <li><p><span>检查结果：</span><span>C</span></p></li>
+                        <li><p><span>单位名称：</span><span>广州市天河区加州汉堡长兴店</span></p></li>
+                        <li><p><span>法定代表人：</span><span>张三</span></p></li>
+                        <li><p><span>许可证号：</span><span>HJHD465413131321684</span></p></li>
+                        <li><p><span>经营范围：</span><span>快餐</span></p></li>
+                        <li><p><span>有效期：</span><span>2020-01-05</span></p></li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <img src="" alt=""/>
+                        </li>
+                        <li>
+                            <img src="" alt=""/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="slider_note" class="fr">
+                <h2>商家公告</h2>
+                <p>外送时间9:00-22:00；本店所有产品都是现做现卖，产品一旦制作，概不支持退款，不便之处，敬请谅解，感谢您的支持，谢谢！</p>
+                <h4>配送说明<br><span>配送费￥2</span></h4>
+                <a href="#">举报商家</a>
+            </div>
+        </div>
+        <div id="footer" class="clearfix">
+            <div class="abc fl">
+                <div class="help">
+                    <p>用户帮助</p>
+                    <ul>
+                        <li><a href="#">客户服务</a></li>
+                        <li><a href="#">客户服务</a></li>
+                        <li><a href="#">客户服务</a></li>
+                        <li><a href="#">客户服务</a></li>
+                    </ul>
+                </div>
+                <div class="cooperation">
+                    <p>商务合作</p>
+                    <ul>
+                        <li><a href="#">我要开店</a></li>
+                        <li><a href="#">加盟指南</a></li>
+                        <li><a href="#">市场合作</a></li>
+                        <li><a href="#">开发平台</a></li>
+                    </ul>
+                </div>
+                <div class="about">
+                    <p>关于我们</p>
+                    <ul>
+                        <li><a href="#">饿了么介绍</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">规则中心</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="web_info fr">
+                <div class="contact fl">
+                    <p>24小时服务热线</p>
+                    <p>关注我们</p>
+                </div>
+                <div class="app_down fr">
+                    <img src="../../images/QR_code.jpg" alt="饿了么app"/>
+                    <div class="down_link fr">
+                        <h4>下载手机版</h4>
+                        <p>手机订餐更方便</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

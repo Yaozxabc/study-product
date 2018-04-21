@@ -228,7 +228,6 @@ body{
     padding:0.5rem
 }
 .star{
-    background: darkblue;
     position: relative;
     height: .25rem;
     width: 1.6rem;
@@ -340,7 +339,7 @@ body{
 }
 .shop_menu{
     margin-top: 4.75rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 /*sliderÑùÊ½*/
@@ -368,6 +367,9 @@ body{
 }
 .icon-mail{
     border-top: 1px solid #e6e6e6;
+}
+.icon-top{
+    display: none;
 }
 .QR_code:hover div{
     top: 0;
