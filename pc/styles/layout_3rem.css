@@ -247,50 +247,53 @@ body{
     font-size:0.45rem;
     color: #000000;
 }
-.shop_show,.shop_show_last{
-    position:absolute;
-    top:0;width:6.3rem;
-    height:4rem;
-    background-Color:#e6e6e6;
-    z-index:3;
-    border: .01rem solid #cccccc;
-    padding:.45rem .35rem;
-}
-.shop_show span,.shop_show_last span{
+.shop_show,.shop_show_last{position:absolute;top:0;width:6.675rem;background-Color:#ffffff;z-index:3;border: .01rem solid #cccccc;padding:.45rem .35rem }
+.shop_show .sanjiao,.shop_show_last .sanjiao{
     position: absolute;
     top:.25rem;
     width: 0;
     height: 0;
     border-style: solid ;
-    }
-.shop_show span{left:-.26rem;border-color: transparent #cccccc transparent transparent ;
-    border-width: .26rem .26rem .26rem 0;}
-.shop_show_last span{left:7.03rem;border-color: transparent transparent transparent #cccccc;
-    border-width: .26rem 0 .26rem .26rem;}
-.shop_show{left:7.4rem;}
+}/*三角形统一样式*/
+.shop_show .sanjiao{left:-.26rem;border-color: transparent #e6e6e6 transparent transparent ;
+    border-width: .26rem .26rem .26rem 0;}/*三角形前三栏底层样式*/
+.shop_show_last .sanjiao{left:7.375rem;border-color: transparent transparent transparent #e6e6e6;
+    border-width: .26rem 0 .26rem .26rem;}/*三角形最后一栏底层样式*/
+.shop_show{left:7.375rem;}
 .shop_show:after{
     content:"";
     position: absolute;
     top:.25rem;
-    left:-.25rem;
+    left:-.2rem;
     width: 0;
     height: 0;
     border-style: solid ;
-    border-color: transparent #e6e6e6 transparent transparent ;
+    border-color: transparent #ffffff transparent transparent ;
     border-width: .25rem .25rem .25rem 0;
-}
-.shop_show_last{left:-7rem;}
+}/*三角形前三栏样式*/
+.shop_show_last{left:-7.375rem;}
 .shop_show_last:after{
     content:"";
     position: absolute;
     top:.25rem;
-    left:7rem;
+    left:7.3rem;
     width: 0;
     height: 0;
     border-style: solid ;
-    border-color: transparent transparent transparent #e6e6e6 ;
+    border-color: transparent transparent transparent #ffffff ;
     border-width: .25rem  0 .25rem .25rem;
-}
+}/*三角形最后一栏样式*/
+
+.shop_show h3{border-bottom:1px solid #f2f2f2;}
+.shop_show h3 strong{font-size:.45rem}
+.shop_show h3 p{height:1rem;line-height:1rem}
+.shop_show h3 span{color:#999999;margin-right:.125rem;}
+.shop_show h4{background:#f2f2f2;margin-top:.4rem;}
+.shop_show h4 p{height: .75rem;line-height: .7rem}
+.shop_show em{color: red}
+.shop_show h4 .free{display:inline-block;width:2.15rem;text-align:center;border-right:1px solid #f2f2f2;}
+.shop_show h4 .time{display:inline-block;width:4.4rem;text-align:center;}
+.shop_show .introduce{margin-top:.6rem;color:#666666}
 /*footer样式*/
 .abc{
     width: 45%;
