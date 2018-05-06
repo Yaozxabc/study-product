@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .cicle1 li, .cicle2 li,.cicle3 li{
+            float: left;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background: yellow;
+            border: 1px solid saddlebrown;
+            text-align: center;
+        }
+        ul .active{
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oUl1=document.getElementsByTagName("ul")[0];
+            var oLI=oUl1.getElementsByTagName("li");
+            var oUl2=document.getElementsByTagName("ul")[1];
+            var oLI1=oUl2.getElementsByTagName("li");
+            var oUl3=document.getElementsByTagName("ul")[2];
+            var oLI2=oUl3.getElementsByTagName("li");
+            var btn=document.getElementById("btn");
+            var timer=null;
+            var oNow=0;
+            btn.onclick=function(){
+                toCicle(oLI,oLI1,toCicle);
+
+            }
+            function toCicle(oLIq,da,fn){
+                    clearInterval(timer);
+                    oLIq[oNow].className="active";
+                    timer=setInterval(function(){
+                        if(oNow==oLIq.length){
+                            oLIq[oNow-1].className="";
+                            oNow=0;
+                            clearInterval(timer);
+                            if(da||fn){
+                                fn(da);
+                            };
+                            return;
+                        }
+                        for(i=0;i<oLI.length;i++){
+                            oLIq[i].className="";
+                        }
+                        oLIq[oNow].className="active";
+                        oNow++;
+                }, 500)}
+
+        }
+    </script>
+</head>
+<body>
+<ul class="cicle1">
+    <li >1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<ul class="cicle2">
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+</ul>
+<ul class="cicle3">
+    <li>10</li>
+    <li>11</li>
+    <li>12</li>
+    <li>13</li>
+    <li>14</li>
+    <li>15</li>
+</ul>
+<input type="button" value="开始" id="btn"/>
+
+</body>
+</html>

@@ -293,7 +293,7 @@ body{
 .shop_show em{color: red}
 .shop_show h4 .free{display:inline-block;width:2.15rem;text-align:center;border-right:1px solid #f2f2f2;}
 .shop_show h4 .time{display:inline-block;width:4.4rem;text-align:center;}
-.shop_show .introduce{margin-top:.6rem;color:#666666}
+.shop_show .introduce{margin-top:.6rem;color:#666666;}
 /*footerÑùÊ½*/
 .abc{
     width: 45%;

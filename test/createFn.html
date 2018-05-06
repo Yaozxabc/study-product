@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+//        function RegStr(str,Arr){
+//            var Reg=eval("/"+str.toString()+"+/g");
+//            var arr=[];
+//            for(var i=0;i<Arr.length;i++){
+//                console.log(result)
+//                if(Reg.test(Arr[i])){
+//                    arr.push(i)
+//                }
+//            }
+//            return arr;
+//        }
+//        var result=RegStr("w",arr);
+var arr=["nwba","nwba","nwba","nwba","nwba","nwba"]
+var Reg=/w/g;
+var result=[];
+for(var i=0;i<arr.length;i++){
+    if(Reg.test(arr[i])){
+        result.push(i)
+    }
+}
+console.log(result)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

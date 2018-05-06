@@ -317,6 +317,7 @@ body{
     margin-right: -20px;
 }
 .food_category{
+    z-index: 2;
     width: 840px;
     height: 128px;
     padding: 16px 20px;
