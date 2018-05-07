@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -25,7 +25,6 @@
             for(var i=0;i<$('.food_session').length;i++){
                 arr.push($('.food_session').eq(i).offset().top)
             }
-            alert(arr)
             $(window).bind('scroll',function(){
                 var temp=$(window).scrollTop();
                 if(temp>$oTop){
