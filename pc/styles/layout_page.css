@@ -339,7 +339,7 @@ body{
     color: #333333;
 
 }
-.food_category li a:hover,.food_category .active{
+.food_category li a:hover,.food_category .active a{
     color: #ffffff;
     background: slategrey;
 }
