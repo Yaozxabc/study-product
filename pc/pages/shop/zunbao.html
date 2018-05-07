@@ -21,10 +21,13 @@
                 $('.main>div').css("display","none");
                 $('.main>div').eq($(this).parent().index()).css("display","block");
             })
-
-
+            var arr=[];
+            for(var i=0;i<$('.food_session').length;i++){
+                arr.push($('.food_session').eq(i).offset().top)
+            }
+            alert(arr)
             $(window).bind('scroll',function(){
-                var temp=$(window).scrollTop()
+                var temp=$(window).scrollTop();
                 if(temp>$oTop){
                     $("food_list").css("top",$aTop+"px");
                     $('.all_products').css('position',"relative")
@@ -35,14 +38,27 @@
                     $('.food_category').css('position',"")
                     $('.food_category').css("top",$oTop+"px");
                 }
+                for(var i=0;i<arr.length;i++){
+                    $(".food_category >li").eq(i).removeClass("active");
+                    if(arr[i]<temp+540&&temp+540<=arr[i+1]){
+                        $(".food_category >li").eq(i).addClass("active")
+                    }else if(temp>=arr[arr.length-2]){
+                        $(".food_category >li").eq(arr.length-1).addClass("active")
+                    }
+                }
             })
 
             $('.food_category >li >a').click(function(){
+                var temp=$(window).scrollTop()
+                $(this).parent().siblings().removeClass("active");
+                $(this).parent().addClass('active');
                 var num=$(this).parent().index()
-                var abc=$(".food_list > div").eq(num).offset().top;
+                var abc=$(".food_session").eq(num).offset().top;
                 $(document.body).animate({scrollTop:abc-150},300);
-                $('.food_category').css("top",temp-$oTop+"px");
+                $('.food_category').css("top",temp-$oTop*2.5+"px");
             })
+
+
         })
     </script>
 </head>
@@ -125,7 +141,7 @@
             <div class="main fl">
                 <div class="all_products clearfix">
                     <ul class="food_category">
-                        <li><a href="#" class="active"> 热销</a></li>
+                        <li class="active"><a href="#" > 热销</a></li>
                         <li><a href="#"> 优惠</a></li>
                         <li><a href="#" > 11元爆款</a></li>
                         <li><a href="#"> 超值爆款</a></li>
@@ -1055,7 +1071,7 @@
                         </div>
                         <div class="food_session clearfix">
                         <h3>
-                            <strong>加州奶茶</strong><em>大家喜欢吃，才叫真好吃</em>
+                            <strong>加州奶茶冷饮世界</strong><em>大家喜欢吃，才叫真好吃</em>
                         </h3>
                         <ul class="food_menu">
                             <li>
@@ -1146,7 +1162,7 @@
                         </div>
                         <div class="food_session clearfix">
                         <h3>
-                            <strong>冷饮世界</strong><em>最新实惠，吃到赚到</em>
+                            <strong>温馨热饮</strong><em>最新实惠，吃到赚到</em>
                         </h3>
                         <ul class="food_menu">
                             <li>
@@ -1237,98 +1253,7 @@
                         </div>
                         <div class="food_session clearfix">
                         <h3>
-                            <strong> 温馨热饮</strong><em>大家喜欢吃，才叫真好吃</em>
-                        </h3>
-                        <ul class="food_menu">
-                            <li>
-                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
-                                <div class="food_info fr">
-                                    <h4 class="food_name">加州四号套餐</h4>
-                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
-                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
-                                    <p class="food_spend">￥23</p>
-                                </div>
-                                <a href="#" class="ToMenu">
-                                    <i>-</i>
-                                    <input type="text" class="count"/>
-                                    <i>+</i>
-                                </a>
-                            </li>
-                            <li>
-                                <img src="../../images/shop/food/01.jpg" alt=""/>
-                                <div class="food_info fr">
-                                    <h4 class="food_name">加州四号套餐</h4>
-                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
-                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
-                                    <p class="food_spend">￥23</p>
-                                </div>
-                                <a href="#" class="ToMenu">
-                                    <i>-</i>
-                                    <input type="text" class="count"/>
-                                    <i>+</i>
-                                </a>
-                            </li>
-                            <li>
-                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
-                                <div class="food_info fr">
-                                    <h4 class="food_name">加州四号套餐</h4>
-                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
-                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
-                                    <p class="food_spend">￥23</p>
-                                </div>
-                                <a href="#" class="ToMenu">
-                                    <i>-</i>
-                                    <input type="text" class="count"/>
-                                    <i>+</i>
-                                </a>
-                            </li>
-                            <li>
-                                <img src="../../images/shop/food/01.jpg" alt=""/>
-                                <div class="food_info fr">
-                                    <h4 class="food_name">加州四号套餐</h4>
-                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
-                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
-                                    <p class="food_spend">￥23</p>
-                                </div>
-                                <a href="#" class="ToMenu">
-                                    <i>-</i>
-                                    <input type="text" class="count"/>
-                                    <i>+</i>
-                                </a>
-                            </li>
-                            <li>
-                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
-                                <div class="food_info fr">
-                                    <h4 class="food_name">加州四号套餐</h4>
-                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
-                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
-                                    <p class="food_spend">￥23</p>
-                                </div>
-                                <a href="#" class="ToMenu">
-                                    <i>-</i>
-                                    <input type="text" class="count"/>
-                                    <i>+</i>
-                                </a>
-                            </li>
-                            <li>
-                                <img src="../../images/shop/food/01.jpg" alt=""/>
-                                <div class="food_info fr">
-                                    <h4 class="food_name">加州四号套餐</h4>
-                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
-                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
-                                    <p class="food_spend">￥23</p>
-                                </div>
-                                <a href="#" class="ToMenu">
-                                    <i>-</i>
-                                    <input type="text" class="count"/>
-                                    <i>+</i>
-                                </a>
-                            </li>
-                        </ul>
-                        </div>
-                        <div class="food_session clearfix">
-                        <h3>
-                            <strong>配料套餐</strong><em>大家喜欢吃，才叫真好吃</em>
+                            <strong>配料套餐 </strong><em>大家喜欢吃，才叫真好吃</em>
                         </h3>
                         <ul class="food_menu">
                             <li>
@@ -1420,6 +1345,97 @@
                         <div class="food_session clearfix">
                         <h3>
                             <strong>饮料任性换</strong><em>大家喜欢吃，才叫真好吃</em>
+                        </h3>
+                        <ul class="food_menu">
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt=""/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt=""/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt="汉堡"/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                            <li>
+                                <img src="../../images/shop/food/01.jpg" alt=""/>
+                                <div class="food_info fr">
+                                    <h4 class="food_name">加州四号套餐</h4>
+                                    <p class="food_content">香辣鸡腿堡+香辣蟹+中可</p>
+                                    <div class="star"><img src="../../images/shop/star/5star.svg" alt=""/></div><span>月销售26份</span>
+                                    <p class="food_spend">￥23</p>
+                                </div>
+                                <a href="#" class="ToMenu">
+                                    <i>-</i>
+                                    <input type="text" class="count"/>
+                                    <i>+</i>
+                                </a>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="food_session clearfix">
+                        <h3>
+                            <strong>饿了么专项</strong><em>大家喜欢吃，才叫真好吃</em>
                         </h3>
                         <ul class="food_menu">
                             <li>
