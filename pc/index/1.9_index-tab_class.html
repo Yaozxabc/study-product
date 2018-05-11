@@ -20,6 +20,8 @@
             var $li_1=$("<li><a href='../pages/shop/zunbao.html'><div class='shop_logo fl'> <img src='../images/shop/logo/logo%20(1).png' alt='必胜客' /><p class='time'>29分钟</p> </div><div class='shop_info'><h3 class='shop_name'>必胜客</h3> <div class='star'><img src='../images/shop/star/5star.svg' alt='好评' class='star'/> </div> <p class='play_for'>配送费</p></div> </a> </li>")
             $(parent).append($li_1);
         }
+
+        //设置商店属性信息
         function SetAttr(data,index,kindex){
             var str=data.list[0].shop[kindex]["id"];
             var Regex=/^0+/;
@@ -32,6 +34,8 @@
             $(".shop_logo .time").eq(index).html(obj["time"]+"分钟")
 
         }
+
+        //创建寻找匹配数组
         function RegStr(str,Arr){
             var Reg=eval("/"+str+"+/g");
             var arr=[];
@@ -42,8 +46,35 @@
             }
             return arr;
         }
-        /*加载商店信息*/
+
+        //返回相应属性的json数组集合
+        function getTypeArr(type){
+            $.ajax({
+                type:"GET",
+                url:'../scripts/shop3.json',
+                dataType:"json",
+                success:function(data){
+                    var arr=[]
+                    for(i=0;i<data.shop.length;i++){
+
+                        var Cas=Object.keys(data.shop[i])
+                        for(j=0;j<Cas.length;j++){
+                            var ok=Cas[j]
+                           if(ok==type){
+                               arr.push(data.shop[i][ok])
+                           }
+
+                        }
+                    }
+                    alert(arr)
+                }
+            })
+
+        }
+
+        /*打开页面同步加载商店信息*/
         (function(){
+          getTypeArr('free');
             $.get("../scripts/shop2.json",function(data,textStatus){
                 for(i=0;i<data.list[0].shop.length;i++){
                     CreateLi(".shop_list");
@@ -109,7 +140,7 @@
             /*鼠标移动显示效果*/
             (function(){
                 var timer;
-                $(".shop_list >li>a").on("mouseover",function(){
+                $(".shop_list >li>a").bind("mouseover",function(){
                     clearTimeout(timer);
                     $(".shop_show").remove();
                     var $that=$(this);
@@ -123,7 +154,7 @@
                         $that.append($sInfo);
                     },300)
                 })
-                $(".shop_list >li").off("mouseout",function(){
+                $(".shop_list >li>a").bind("mouseout",function(){
                     clearTimeout(timer);
                     $(".shop_show").remove();
                     $(".shop_show_last").remove();
@@ -148,7 +179,27 @@
             })()
 
 
+sortType('star')
+
+
+
+
         })
+
+        function sortType(name){
+            $.ajax({
+                url:'../scripts/shop2.json',
+                dataType:'json',
+                success:function(data){
+                    data.list[0].shop.sort(function(li1,li2){
+                        var la1=parseInt(li1[name]);
+                        var la2=parseInt(li2[name]);
+                        return la1-la2;
+                    })
+                    console.log(data.list[0].shop)
+                }
+            })
+        }
     </script>
 </head>
 <body>
